@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://igj04kuyut4s"]
+
+[ext_resource type="PackedScene" uid="uid://cy3kygkkoavyd" path="res://assets/Scenes/Area_Functionality/area_template.tscn" id="1_o5th6"]
+
+[node name="Area2" instance=ExtResource("1_o5th6")]
+
+[node name="TileMap" parent="." index="0"]
+position = Vector2(250, -27)
+
+[node name="Area(exit)" parent="TileMap" index="3"]
+position = Vector2(129, -18)
