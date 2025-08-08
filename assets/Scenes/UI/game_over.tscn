@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpppblel2xbjy"]
+
+[ext_resource type="Texture2D" uid="uid://cvsf5nk3ns8bf" path="res://assets/Scenes/Review/life.jpeg" id="1_fe61t"]
+[ext_resource type="Script" uid="uid://dw6kgpg5aq8ur" path="res://assets/Scripts/game_over.gd" id="1_y36ab"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y36ab")
+
+[node name="Life" type="Sprite2D" parent="."]
+position = Vector2(576, 152)
+scale = Vector2(1.54891, 1.51359)
+texture = ExtResource("1_fe61t")
+
+[node name="GOLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -4.0
+offset_right = 132.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.854902, 0.345098, 0.686275, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.466667, 0.815686, 1)
+theme_override_font_sizes/font_size = 48
+text = "Game over"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = 84.0
+offset_right = 117.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 0.635294, 0.87451, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.176471, 0.721569, 1)
+theme_override_colors/font_hover_color = Color(0.996078, 0, 0.635294, 1)
+theme_override_colors/icon_disabled_color = Color(0.980392, 0.686275, 0.862745, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0.662745, 0.886275, 1)
+theme_override_font_sizes/font_size = 30
+text = "♻️ Restart"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.976471, 0.662745, 0.854902, 1)
+theme_override_colors/font_color = Color(0.996078, 0.662745, 0.870588, 1)
+theme_override_font_sizes/font_size = 30
+text = "🛑 Quit Game"

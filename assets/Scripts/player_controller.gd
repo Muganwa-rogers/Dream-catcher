@@ -26,10 +26,10 @@ func _input(event):
 		set_collision_mask_value(10, true);		
 		
 		
-func _physics_process(delta: float) -> void:
+func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y += gravity * delta
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -38,5 +38,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * speed * speed_multiplier;
 	else:
 		velocity.x = move_toward(velocity.x, 0,speed * speed_multiplier)
-
 	move_and_slide()
+	
+func teleport_to_location(new_location):
+	position = new_location

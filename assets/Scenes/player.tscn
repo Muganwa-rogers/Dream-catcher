@@ -99,7 +99,8 @@ _data = {
 radius = 4.0
 height = 14.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 768
 script = ExtResource("1_qrc4i")
 speed = 5.0
 
@@ -131,3 +132,4 @@ region_rect = Rect2(0, 0, 16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_qrc4i")
+one_way_collision = true

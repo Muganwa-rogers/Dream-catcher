@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://jh87piah53r4"]
+
+[ext_resource type="Script" uid="uid://dsxfvyxs8sgsw" path="res://assets/Scripts/dream.gd" id="1_dsqga"]
+[ext_resource type="Texture2D" uid="uid://ce07aem13k4q" path="res://assets/Sprites/dream-home.png" id="1_x8bjs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dsqga"]
+radius = 7.76209
+
+[node name="Dream" type="Area2D"]
+script = ExtResource("1_dsqga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_dsqga")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.625, -2)
+scale = Vector2(0.0249023, 0.0273438)
+texture = ExtResource("1_x8bjs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgxj185lsjjn6"]
+
+[ext_resource type="Script" uid="uid://qvuxmqd3lgh2" path="res://assets/Scripts/hud.gd" id="1_5qicn"]
+[ext_resource type="Texture2D" uid="uid://ce07aem13k4q" path="res://assets/Sprites/dream-home.png" id="1_85wyh"]
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("dream_label", "portal_label") groups=["hud"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5qicn")
+dream_label = NodePath("dreamTexture/dreamLabel")
+portal_label = NodePath("portalLabel")
+
+[node name="dreamTexture" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 88.0
+texture = ExtResource("1_85wyh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="dreamLabel" type="Label" parent="dreamTexture"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 72.0
+offset_top = -12.0
+offset_right = 126.0
+offset_bottom = 11.0
+grow_vertical = 2
+text = "eXp:  00"
+
+[node name="portalLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_right = 80.0
+offset_bottom = 23.0
+text = "Near your Dreams Push past your limits....."

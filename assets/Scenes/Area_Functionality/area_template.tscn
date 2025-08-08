@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cy3kygkkoavyd"]
 
 [ext_resource type="Texture2D" uid="uid://c2raosaaqbw5i" path="res://assets/Sprites/tiles_1.png" id="1_bfa3x"]
-[ext_resource type="PackedScene" uid="uid://culeid0r6khlk" path="res://assets/Scenes/player.tscn" id="2_ts3mw"]
 [ext_resource type="PackedScene" uid="uid://uy11ve23dhas" path="res://assets/Scenes/Area_Functionality/area_exit.tscn" id="3_mk0ko"]
+[ext_resource type="PackedScene" uid="uid://jh87piah53r4" path="res://assets/Scenes/dream.tscn" id="4_2tvpk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8a26"]
 texture = ExtResource("1_bfa3x")
@@ -313,6 +313,8 @@ sources/0 = SubResource("TileSetAtlasSource_a8a26")
 
 [node name="Area-Template" type="Node2D"]
 
+[node name="PlayerStartPosition" type="Node2D" parent="." groups=["player_start_position"]]
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 8)
 tile_set = SubResource("TileSet_22e56")
@@ -321,11 +323,24 @@ layer_0/name = "ground"
 layer_0/tile_data = PackedInt32Array(65531, 65536, 4, 65532, 65536, 4, 65533, 65536, 4, 65534, 65536, 4, 65535, 65536, 4, 131071, 65536, 5, 65536, 65536, 5, 0, 65536, 4, 1, 65536, 4, 2, 65536, 4, 3, 65536, 4, 4, 65536, 4, 5, 65536, 4, 65541, 65536, 5, 65542, 65536, 5, 65543, 65536, 5, 7, 65536, 4, 6, 65536, 4, 131069, 65536, 5, 131068, 65536, 5, 131067, 65536, 5, 131066, 65536, 5, 131065, 65536, 5, 131070, 65536, 5, 65537, 65536, 5, 65538, 65536, 5, 65539, 65536, 5, 65540, 65536, 5, 65544, 131072, 5, 131075, 65536, 6, 131074, 65536, 6, 131073, 65536, 6, 131072, 65536, 6, 196607, 65536, 6, 196606, 65536, 6, 131064, 0, 5, 65529, 65536, 4, 65530, 65536, 4, 65528, 0, 4, 196605, 65536, 6, 196604, 65536, 6, 196603, 65536, 6, 196602, 65536, 6, 196601, 65536, 6, 196600, 0, 6, 131076, 65536, 6, 131077, 65536, 6, 131078, 65536, 6, 131079, 65536, 6, 131080, 131072, 6, 8, 131072, 4)
 layer_1/name = "oneway_ground"
 
-[node name="Player" parent="TileMap" instance=ExtResource("2_ts3mw")]
-collision_mask = 768
-
 [node name="Area(exit)" parent="TileMap" instance=ExtResource("3_mk0ko")]
 position = Vector2(-92, -20)
 
 [node name="Moving_platons" type="Node2D" parent="."]
 position = Vector2(208, -49)
+
+[node name="Dream-pickup" type="Node2D" parent="."]
+
+[node name="Dream1" parent="Dream-pickup" instance=ExtResource("4_2tvpk")]
+position = Vector2(116, -1)
+
+[node name="Dream2" parent="Dream-pickup" instance=ExtResource("4_2tvpk")]
+position = Vector2(93, -2)
+
+[node name="Dream3" parent="Dream-pickup" instance=ExtResource("4_2tvpk")]
+position = Vector2(70, -4)
+
+[node name="Dream4" parent="Dream-pickup" instance=ExtResource("4_2tvpk")]
+position = Vector2(44, -4)
+
+[node name="Dream5" parent="Dream-pickup" instance=ExtResource("4_2tvpk")]

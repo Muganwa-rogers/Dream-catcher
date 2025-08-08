@@ -16,6 +16,7 @@ size = Vector2(32, 4)
 [node name="Large_movingplatform" type="Path2D" node_paths=PackedStringArray("parthfollow2D")]
 curve = SubResource("Curve2D_di3bh")
 script = ExtResource("1_otb5e")
+path_time = 2.0
 Ease = 2
 Transition = 4
 parthfollow2D = NodePath("PathFollow2D")

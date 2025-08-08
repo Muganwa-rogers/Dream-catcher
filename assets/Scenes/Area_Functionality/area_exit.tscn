@@ -4,18 +4,20 @@
 [ext_resource type="Script" uid="uid://pymglqrtjc8k" path="res://assets/Scripts/area_exit.gd" id="1_680ob"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_680ob"]
-radius = 18.0
+radius = 13.0
 
-[node name="Area(exit)" type="Area2D"]
+[node name="Area(exit)" type="Area2D" node_paths=PackedStringArray("sprite") groups=["area_exits"]]
 collision_layer = 65536
 script = ExtResource("1_680ob")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -10
 texture = ExtResource("1_8qhk1")
+region_enabled = true
+region_rect = Rect2(22, 0, 22, 22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, -1)
 shape = SubResource("CircleShape2D_680ob")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
