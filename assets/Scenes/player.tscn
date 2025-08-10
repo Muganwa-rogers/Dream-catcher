@@ -99,10 +99,11 @@ _data = {
 radius = 4.0
 height = 14.0
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera") groups=["player"]]
 collision_mask = 768
 script = ExtResource("1_qrc4i")
 speed = 5.0
+camera = NodePath("Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -15)

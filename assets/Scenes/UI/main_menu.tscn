@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8djr20js18i2"]
+
+[ext_resource type="Script" uid="uid://car6t88s4x2kt" path="res://assets/Scripts/main_menu.gd" id="1_d5rjg"]
+[ext_resource type="Texture2D" uid="uid://bkekdvb4x5ivy" path="res://bg-game.PNG" id="1_s54kd"]
+[ext_resource type="FontFile" uid="uid://djrt313ovpqgb" path="res://assets/Fonts/breakdown_pg/Breakdown PG.otf" id="2_d5rjg"]
+[ext_resource type="FontFile" uid="uid://chwi5f5s0jx6o" path="res://assets/Fonts/breakdown_pg/Breakdown PG Bold.otf" id="3_yi34u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_71mab"]
+texture = ExtResource("1_s54kd")
+modulate_color = Color(0.485703, 0.485704, 0.485703, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tptoc"]
+bg_color = Color(0.6, 0.0980392, 0.6, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.6, 0.0980392, 0.6, 0.576471)
+shadow_size = 10
+shadow_offset = Vector2(0, 3.15)
+
+[node name="MainMenu" type="Control" groups=["main_menu"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d5rjg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 265.0
+offset_right = -608.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_71mab")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = 19.0
+offset_right = 460.0
+offset_bottom = 263.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_d5rjg")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/hover = SubResource("StyleBoxFlat_tptoc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tptoc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tptoc")
+text = "Play"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_d5rjg")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/hover = SubResource("StyleBoxFlat_tptoc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tptoc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tptoc")
+text = "Quit"
+
+[node name="Game-name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -233.0
+offset_right = 342.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6, 0.0980392, 0.6, 1)
+theme_override_fonts/font = ExtResource("3_yi34u")
+theme_override_font_sizes/font_size = 100
+text = "DREAM CATHER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

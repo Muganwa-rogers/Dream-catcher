@@ -1,7 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpppblel2xbjy"]
+[gd_scene load_steps=8 format=3 uid="uid://dpppblel2xbjy"]
 
-[ext_resource type="Texture2D" uid="uid://cvsf5nk3ns8bf" path="res://assets/Scenes/Review/life.jpeg" id="1_fe61t"]
 [ext_resource type="Script" uid="uid://dw6kgpg5aq8ur" path="res://assets/Scripts/game_over.gd" id="1_y36ab"]
+[ext_resource type="FontFile" uid="uid://chwi5f5s0jx6o" path="res://assets/Fonts/breakdown_pg/Breakdown PG Bold.otf" id="2_ln0vh"]
+[ext_resource type="FontFile" uid="uid://bbgkv4e7cpqrk" path="res://assets/Fonts/breakdown_pg/Breakdown PG Italic.otf" id="3_0ajvt"]
+[ext_resource type="FontFile" uid="uid://djrt313ovpqgb" path="res://assets/Fonts/breakdown_pg/Breakdown PG.otf" id="4_yw8xn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ln0vh"]
+bg_color = Color(0.6, 0.0980392, 0.6, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.6, 0.0980392, 0.6, 0.576471)
+shadow_size = 10
+shadow_offset = Vector2(0, 3.15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ajvt"]
+bg_color = Color(0.6, 0.0980392, 0.6, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.6, 0.0980392, 0.6, 0.576471)
+shadow_size = 10
+shadow_offset = Vector2(0, 3.15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw8xn"]
+bg_color = Color(0.6, 0.0980392, 0.6, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.6, 0.0980392, 0.6, 0.576471)
+shadow_size = 10
+shadow_offset = Vector2(0, 3.15)
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -12,11 +44,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y36ab")
 
-[node name="Life" type="Sprite2D" parent="."]
-position = Vector2(576, 152)
-scale = Vector2(1.54891, 1.51359)
-texture = ExtResource("1_fe61t")
-
 [node name="GOLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -24,14 +51,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = -4.0
-offset_right = 132.0
-offset_bottom = 63.0
+offset_left = -127.0
+offset_top = -112.0
+offset_right = 125.0
+offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.854902, 0.345098, 0.686275, 1)
 theme_override_colors/font_shadow_color = Color(1, 0.466667, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_ln0vh")
+theme_override_font_sizes/font_size = 97
+text = "DREAM CATHER"
+
+[node name="GOLabel2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = 48.0
+offset_right = 138.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.854902, 0.345098, 0.686275, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.466667, 0.815686, 1)
+theme_override_fonts/font = ExtResource("3_0ajvt")
 theme_override_font_sizes/font_size = 48
 text = "Game over"
 
@@ -42,27 +89,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = 84.0
-offset_right = 117.0
-offset_bottom = 188.0
+offset_left = -146.0
+offset_top = 153.0
+offset_right = 175.0
+offset_bottom = 308.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.976471, 0.662745, 0.854902, 1)
+theme_override_colors/font_color = Color(0.996078, 0.662745, 0.870588, 1)
+theme_override_fonts/font = ExtResource("4_yw8xn")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_ln0vh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0ajvt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yw8xn")
+text = "Quit Game"
+
 [node name="Restart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 5.3
 theme_override_colors/font_disabled_color = Color(1, 0.635294, 0.87451, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.176471, 0.721569, 1)
 theme_override_colors/font_hover_color = Color(0.996078, 0, 0.635294, 1)
 theme_override_colors/icon_disabled_color = Color(0.980392, 0.686275, 0.862745, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 0.662745, 0.886275, 1)
+theme_override_fonts/font = ExtResource("4_yw8xn")
 theme_override_font_sizes/font_size = 30
-text = "♻️ Restart"
-
-[node name="Quit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.976471, 0.662745, 0.854902, 1)
-theme_override_colors/font_color = Color(0.996078, 0.662745, 0.870588, 1)
-theme_override_font_sizes/font_size = 30
-text = "🛑 Quit Game"
+theme_override_styles/hover = SubResource("StyleBoxFlat_ln0vh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0ajvt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yw8xn")
+text = "Restart"

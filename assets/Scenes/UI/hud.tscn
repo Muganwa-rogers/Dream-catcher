@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgxj185lsjjn6"]
+[gd_scene load_steps=4 format=3 uid="uid://cgxj185lsjjn6"]
 
 [ext_resource type="Script" uid="uid://qvuxmqd3lgh2" path="res://assets/Scripts/hud.gd" id="1_5qicn"]
 [ext_resource type="Texture2D" uid="uid://ce07aem13k4q" path="res://assets/Sprites/dream-home.png" id="1_85wyh"]
+[ext_resource type="FontFile" uid="uid://bbgkv4e7cpqrk" path="res://assets/Fonts/breakdown_pg/Breakdown PG Italic.otf" id="3_5lb2a"]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("dream_label", "portal_label") groups=["hud"]]
+[node name="HUD" type="Control" node_paths=PackedStringArray("dream_label", "portal_label", "timer_label") groups=["hud"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,13 +14,14 @@ grow_vertical = 2
 script = ExtResource("1_5qicn")
 dream_label = NodePath("dreamTexture/dreamLabel")
 portal_label = NodePath("portalLabel")
+timer_label = NodePath("timerLabel")
 
 [node name="dreamTexture" type="TextureRect" parent="."]
 layout_mode = 1
-offset_left = 24.0
-offset_top = 32.0
-offset_right = 96.0
-offset_bottom = 88.0
+offset_left = 73.0
+offset_top = 84.0
+offset_right = 145.0
+offset_bottom = 140.0
 texture = ExtResource("1_85wyh")
 expand_mode = 1
 stretch_mode = 4
@@ -34,11 +36,40 @@ offset_top = -12.0
 offset_right = 126.0
 offset_bottom = 11.0
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_5lb2a")
 text = "eXp:  00"
 
 [node name="portalLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 24.0
-offset_right = 80.0
-offset_bottom = 23.0
+offset_left = 44.0
+offset_top = 39.0
+offset_right = 325.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("3_5lb2a")
 text = "Near your Dreams Push past your limits....."
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -85.0
+offset_top = 11.0
+offset_right = -40.0
+offset_bottom = 34.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_5lb2a")
+text = "Timer"
+
+[node name="timerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -110.0
+offset_top = 38.0
+offset_right = -28.0
+offset_bottom = 61.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_5lb2a")
+text = "00 :00: 000"

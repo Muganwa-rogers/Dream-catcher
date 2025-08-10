@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://igj04kuyut4s"]
+[gd_scene load_steps=13 format=3 uid="uid://igj04kuyut4s"]
 
 [ext_resource type="PackedScene" uid="uid://cy3kygkkoavyd" path="res://assets/Scenes/Area_Functionality/area_template.tscn" id="1_ombtw"]
+[ext_resource type="Script" uid="uid://cqmh1fif1ggxn" path="res://assets/Scripts/area_1.gd" id="2_a8a26"]
 [ext_resource type="PackedScene" uid="uid://dk0igab3n2ani" path="res://assets/Scenes/large_movingplatform.tscn" id="2_ts3mw"]
 [ext_resource type="PackedScene" uid="uid://jh87piah53r4" path="res://assets/Scenes/dream.tscn" id="3_a8a26"]
 
@@ -46,7 +47,18 @@ _data = {
 }
 point_count = 2
 
-[node name="Area2" instance=ExtResource("1_ombtw")]
+[sub_resource type="Curve2D" id="Curve2D_22e56"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -48)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22e56"]
+size = Vector2(1174, 1304)
+
+[node name="Area1" instance=ExtResource("1_ombtw")]
+script = ExtResource("2_a8a26")
 
 [node name="PlayerStartPosition" parent="." index="0"]
 position = Vector2(93, -189)
@@ -57,7 +69,7 @@ layer_0/tile_data = PackedInt32Array(65531, 65536, 4, 65532, 65536, 4, 65533, 65
 layer_1/tile_data = PackedInt32Array(65581, 65536, 0, 65582, 65536, 0, 65583, 65536, 0, 65584, 65536, 0)
 
 [node name="Area(exit)" parent="TileMap" index="2"]
-position = Vector2(888, -288)
+position = Vector2(877, -349)
 
 [node name="Large_movingplatform3" parent="Moving_platons" index="0" instance=ExtResource("2_ts3mw")]
 position = Vector2(368, -104)
@@ -82,6 +94,10 @@ curve = SubResource("Curve2D_ts3mw")
 [node name="Large_movingplatform2" parent="Moving_platons" index="5" instance=ExtResource("2_ts3mw")]
 position = Vector2(493, 1)
 curve = SubResource("Curve2D_a8a26")
+
+[node name="Large_movingplatform7" parent="Moving_platons" index="6" instance=ExtResource("2_ts3mw")]
+position = Vector2(919, -260)
+curve = SubResource("Curve2D_22e56")
 
 [node name="Dream-pickup" parent="." index="3"]
 position = Vector2(193, -67)
@@ -157,3 +173,12 @@ position = Vector2(63, 32)
 
 [node name="Dream24" parent="Dream-pickup" index="23" instance=ExtResource("3_a8a26")]
 position = Vector2(794, 44)
+
+[node name="KillZone" type="Area2D" parent="." index="4"]
+position = Vector2(306, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" index="0"]
+position = Vector2(269, 634)
+shape = SubResource("RectangleShape2D_22e56")
+
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
