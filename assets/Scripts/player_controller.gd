@@ -3,7 +3,7 @@ class_name PlayerController
 
 @export var speed = 10.0;
 @export var jump_power = 10.0;
-
+@export var camera : Camera2D;
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
@@ -41,4 +41,6 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func teleport_to_location(new_location):
+	camera.position_smoothing_enabled = false;
 	position = new_location
+	camera.reset_smoothing();
