@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Dream-catcher"
-run/main_scene="uid://2kx4dq6lnpur"
+run/main_scene="uid://b8djr20js18i2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://c4opgmdchg576"
 
 [autoload]
 
 GameManager="*res://assets/Scripts/game_manager.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -59,4 +63,5 @@ move_down={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
