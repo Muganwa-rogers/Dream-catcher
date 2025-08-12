@@ -14,6 +14,10 @@ var direction = 0;
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready() -> void:
+	GameManager.reInit()
+
+
 func _input(event):	
 	# Handle jump.
 	

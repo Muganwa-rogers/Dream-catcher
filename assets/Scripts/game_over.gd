@@ -7,12 +7,12 @@ func _ready():
 	
 
 func _on_restart_pressed():
-	#GameManager.next_area()
-	#get_tree().paused = false
-	#$GameplayCamera.current = false
-	get_tree().reload_current_scene();
-	#var game_over_screen = load("res://assets/Scripts/area_1.gd").instantiate()
-	#add_child(game_over_screen)
+	GameManager.restart_game()
+	##get_tree().paused = false
+	##$GameplayCamera.current = false
+	#get_tree().reload_current_scene();
+	##var game_over_screen = load("res://assets/Scripts/area_1.gd").instantiate()
+	##add_child(game_over_screen)
 	#
 func _on_quit_pressed():
 	get_tree().quit()
